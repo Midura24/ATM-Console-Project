@@ -27,6 +27,9 @@ public class ATMaction {
                         ATMaction.useroptions(scanner,currentUser);
                     }
                     break;
+                case 3:
+                    System.exit(0);// to exit the ATM console
+                    break;
                 default:
                     System.out.println("Invalid choice");//if the userchoice is other than 1 and 2 then it will print the output as invalid choice
                     break;//breaks the while loop

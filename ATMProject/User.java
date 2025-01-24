@@ -1,48 +1,20 @@
 package ATMProject;
 
-import java.util.ArrayList;
-
-public class User {
-    private String username;
-    private String userpassword;
-    private static double userbalance=0.0;
-    public ArrayList<Transaction>viewTransaction = new ArrayList<>();
-    public User(String username, String userpassword)
+public class User extends Accounts//create a user class and extends the Accounts class
+{
+    private static long balance = 0;//variable to store the user balance
+    public User(String id, String password)//constructor to assign the values to the variable by calling the parent class constructor using super() method
     {
-        this.setUsername(username);
-        this.setPassword(userpassword);
+        super(id, password);
     }
 
-    public void setUsername(String name)
+    public void setBalance(long balance)// set the balance to the variable
     {
-        this.username = name;
+        User.balance = balance;
     }
-    public String getUsername()
+
+    public double getBalance()// return the balance to the variable
     {
-        return username;
-    }
-    public void setPassword(String password)
-    {
-        this.userpassword = password;
-    }
-    public String getPassword()
-    {
-        return userpassword;
-    }
-    public void setBalance(double balance)
-    {
-        User.userbalance = balance;
-    }
-    public double getBalance()
-    {
-        return userbalance;
-    }
-    public ArrayList<Transaction> getViewTransaction()
-    {
-        return viewTransaction;
-    }
-    public void setViewTransaction(Transaction transaction)
-    {
-        viewTransaction.add(transaction);
+        return balance;
     }
 }
